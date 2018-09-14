@@ -14,7 +14,6 @@ This role requires a Debian, RHEL, or Ubuntu distribution; the role is tested
 with the following specific software versions:
 
 * Ansible: 2.6.0
-* docker: 0.8.4
 * CentOS: 7
 * Debian: 8
 * RHEL: 7
@@ -36,7 +35,7 @@ The role defines most of its variables in `defaults/main.yml`:
 ### `docker_version`
 
 - docker version to install
-- Default value: **0.8.3**
+- Default value: **18.06.1-ce**
 
 
 ### `docker_bin_dir`
@@ -122,25 +121,6 @@ The role defines most of its variables in `defaults/main.yml`:
 - Default value: **""**
 
 #### Custom Configuration Section
-
-As docker loads the configuration from files and directories in lexical order,
-typically merging on top of previously parsed configuration files, you may set
-custom configurations via `docker_config_custom`, which will be expanded into a file named `custom.json` within your `docker_config_dir` which will
-be loaded after all other configuration by default.
-
-An example usage for enabling `vault`:
-
-```yaml
-  vars:
-    docker_config_custom:
-      vault:
-        enabled          : true
-        ca_path          : "/etc/certs/ca"
-        cert_file        : "/var/certs/vault.crt"
-        key_file         : "/var/certs/vault.key"
-        address          : "https://vault.service.consul:8200"
-        create_from_role : "docker-cluster"
-```
 
 ## Dependencies
 
