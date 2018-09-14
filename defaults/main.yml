@@ -1,0 +1,25 @@
+
+
+#默认二进制文件目录
+docker_base_dir: "~/.ansible/rinetd.docker"
+docker_bin_dir: "/usr/local/bin"
+docker_user: "root"
+docker_group: "bin"
+docker_users: []
+# 国内镜像加速 按顺序依次生效
+
+REG_MIRROR_1: "https://registry.docker-cn.com"
+REG_MIRROR_2: "https://docker.mirrors.ustc.edu.cn"
+REG_MIRROR_3: "http://hub-mirror.c.163.com"
+
+# docker日志相关
+
+LOG_DRIVER: "json-file"
+LOG_LEVEL: "warn"
+LOG_MAX_SIZE: "10m"
+LOG_MAX_FILE: 3
+
+# 指定镜像和容器存放路径 --graph=/var/lib/docker
+docker_data_dir: "/var/lib/docker"
+
+
